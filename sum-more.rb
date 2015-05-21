@@ -46,3 +46,40 @@ text.each do |line|
 end
 
 puts "Sum of file: #{running_total}"
+
+# 3. Total number of numbers in file?
+# Set up for part 4
+all_tokens = lines.map { |l| l.split(",") }.flatten
+all_numbers = all_tokens.map { |t| t.to_i }
+
+
+ns = 0
+text.each do |l|
+	number_of_numbers += i.split(",").count
+end
+
+# 3 redux - Other more advanced solutions
+n2 = lines.map { |l| l.split(",") }.flatten.count
+n3 = lines.map { |l| l.split(",").count }.reduce :+
+
+# 4. How many are even? Divisible by 7?
+evens = []
+all_numbers.each do |n|
+	if n.even?
+		evens.push n
+end
+
+evens.count
+
+puts "There are #{evens.count} even numbers."
+
+
+sevens = []
+all_numbers.each do |n|
+	if n % 7 == 0
+		sevens.push n
+	end
+end
+
+sevens.count
+puts "There are #{sevens.count} numbers that are divisible by 7."
